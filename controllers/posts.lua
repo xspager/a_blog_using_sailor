@@ -26,9 +26,10 @@ function posts.index(page)
     page:render("index", {posts=my_posts})
 end
 
-function posts.sample(page)
+function posts.example(page)
     page.layout = "blog"
-    page:render("index")
+    page.theme = "new_bootstrap"
+    page:render("hello")
 end
 
 setmetatable(posts, {

@@ -3,7 +3,7 @@ for k, v in pairs(posts) do
 ?>
 
 <ul>
-	<li><a href="./<%= k %>"><%=v %></a></li>
+	<li><a href="/posts/<%= k %>"><%=v %></a></li>
 </ul>
 
 <?lua end ?>
