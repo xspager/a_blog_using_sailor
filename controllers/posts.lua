@@ -26,6 +26,11 @@ function posts.index(page)
     page:render("index", {posts=my_posts})
 end
 
+function posts.sample(page)
+    page.layout = "blog"
+    page:render("index")
+end
+
 setmetatable(posts, {
     __index = function(a, action)
         if action == 'conf' or action == 'path' then
