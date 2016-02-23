@@ -42,7 +42,7 @@ setmetatable(posts, {
                 end
             })
 
-            page.title = "Teste"
+            page.title = capitalize_case(action, "_")
 
             page:render("md", {
                 md_file_path = my_posts[action]
