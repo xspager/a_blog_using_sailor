@@ -2,12 +2,25 @@ local lfs = require("lfs")
 
 local posts = {}
 
+function capitalize_case(s, delimiter)
+    result = {};
+    for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+        table.insert(result, capitalize(match));
+    end
+    return table.concat(result, " ");
+end
+
+function capitalize(s)
+    s, _ = s:gsub("^%a", string.upper)
+    return s
+end
+
 function posts.index(page)
     local my_posts = {}
     for file in lfs.dir("views/posts/") do
         local name_without_extention = string.match(file, "(.*)%.md$")
         if name_without_extention then
-            table.insert(my_posts, name_without_extention)
+            my_posts[name_without_extention] = capitalize_case(name_without_extention, '_')
         end
     end
     page:render("index", {posts=my_posts})

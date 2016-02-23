@@ -1,9 +1,9 @@
 <?lua
-for _, v in pairs(posts) do
+for k, v in pairs(posts) do
 ?>
 
 <ul>
-	<li><a href="./<%= v %>"><%=v %></a></li>
+	<li><a href="./<%= k %>"><%=v %></a></li>
 </ul>
 
 <?lua end ?>
