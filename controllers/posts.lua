@@ -23,6 +23,7 @@ function posts.index(page)
             my_posts[name_without_extention] = capitalize_case(name_without_extention, '_')
         end
     end
+    page.title = "Posts"
     page:render("index", {posts=my_posts})
 end
 

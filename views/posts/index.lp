@@ -1,4 +1,7 @@
+<h1>Some badly written notes on stuff I'm doing</h1>
+
 <?lua
+
 for k, v in pairs(posts) do
 ?>
 

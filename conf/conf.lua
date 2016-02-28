@@ -3,7 +3,7 @@ local conf = {
 		app_name = 'xspager',
 		default_static = nil, -- If defined, default page will be a rendered lp as defined. 
 							  -- Example: 'maintenance' will render /views/maintenance.lp
-		default_controller = 'main', 
+		default_controller = 'posts', 
 		default_action = 'index',
 		theme = 'default',
 		layout = 'main',
