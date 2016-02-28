@@ -76,8 +76,8 @@
 
     <div id="footer">
       <div class="container">
-      	<!-- Yes, you are allowed to remove this -->
-        <p class="text-muted">© 2016 @DanielOCL. Powered by <a href="http://sailorproject.org" target="_blank">Sailor MVC</a>
+        <!-- Yes, you are allowed to remove this -->
+        <p class="text-muted">© 2016 @DanielOCL. Source on <a href="https://github.com/xspager/a_blog_using_sailor">https://github.com/xspager/a_blog_using_sailor</a>. Powered by <a href="http://sailorproject.org" target="_blank">Sailor MVC</a>
         and <a href="http://lua.org" target="_blank">Lua</a>
         </p>
       </div>
