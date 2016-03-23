@@ -1,10 +1,12 @@
 # Running Sailor on the Haiku Operating System
 
-Get the last nightly version of the recommended variation in [http://download.haiku-os.org/](http://download.haiku-os.org/)  ([direct download link](http://download.haiku-os.org/nightly-images/x86_gcc2_hybrid)).
+If you never heard of [Haiku](https://en.wikipedia.org/wiki/Haiku_%28operating_system%29) according with Wikipedia: *Haiku is a free and open-source operating system compatible with the now discontinued BeOS.* Since it implements the [POSIX](https://en.wikipedia.org/wiki/POSIX) API we can run many Unix compatible software like the Lua interpreter, LuaRocks and some Lua libraries. 
 
-Boot on VirtualBox and use the app HaikuDepot to install *lua* and *lua_devel*
+First thing we need to do is to get the last nightly version of Haiku in <http://download.haiku-os.org/> ([direct download link](http://download.haiku-os.org/nightly-images/x86_gcc2_hybrid)).
 
-![Haiku something](/pub/images/opening_HaikuDepot.png)
+Boot on VirtualBox and use the app HaikuDepot to install *lua* and *lua\_devel*
+
+![open Haiku's package manager](/pub/images/opening_HaikuDepot.png)
 
 Search for **lua**
 
@@ -12,16 +14,16 @@ Search for **lua**
 
 Check the option *Develop Packages* on the menu *Show*
 
-![Check the devel thing](/pub/images/check_Develop_packages.png)
+![Check the devel package option](/pub/images/check_Develop_packages.png)
 
-Install the package *lua_devel* and you will probable be asked to install the package *lua* too, if not do it yourself.
+Install the package *lua\_devel* and you will probable be asked to install the package *lua* too, if not do it yourself.
 
-![Install Lua devel package](/pub/images/install_lua_devel.png)
+![Install lua devel package](/pub/images/install_lua_devel.png)
 
 
 ## Building LuaRocks
 
-Since *git* is preinstalled you can go on and clone [LuaRocks](https://github.com/keplerproject/luarocks) and build it. You will need to pass three flags, **--with-lua** for where is the bin folder where the Lua interpreter binary is, **--with-lua-include** for the Lua headers and **--prefix** for where you want things to be installed.
+Since *git* is pre installed you can go on and clone [LuaRocks](https://github.com/keplerproject/luarocks) and build it. You will need to pass three flags, **--with-lua** for where is the bin folder where the Lua interpreter binary is, **--with-lua-include** for the Lua headers and **--prefix** for where you want things to be installed.
 
     $ git clone https://github.com/keplerproject/luarocks
     $ cd luarocks
@@ -29,7 +31,7 @@ Since *git* is preinstalled you can go on and clone [LuaRocks](https://github.co
     $ make -j3 build
     $ make install
 
-Use LuaRocks's command *path* to set path and cpath, add LuaRocks bin path to PATH
+Use LuaRocks's command *path* to set Lua's *path* and *cpath*, and add LuaRocks bin folder to PATH
 
     eval `./.lua/bin/luarocks path`
     export PATH=$PATH:~/.lua/bin/
@@ -37,14 +39,14 @@ Use LuaRocks's command *path* to set path and cpath, add LuaRocks bin path to PA
 
 ## Installing LuaRocks fork
 
-Clone [LuaSocket](https://github.com/xspager/luasocket) fork with links luasocket with the Haiku's lib network.
+Clone [LuaSocket](https://github.com/xspager/luasocket) fork with links LuaSocket with the Haiku's lib network.
 
     $ git clone https://github.com/xspager/luasocket
     $ cd luasocket
     $ luarocks make luasocket-scm-0.rockspec 
 
 
-## Create a test app to see if we succeded
+## Create a test app to see if we succeeded
 
     $ cd ~
     $ sailor create sailor_test
