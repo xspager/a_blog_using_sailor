@@ -43,6 +43,7 @@ Clone [LuaSocket](https://github.com/xspager/luasocket) fork with links LuaSocke
 
     $ git clone https://github.com/xspager/luasocket
     $ cd luasocket
+    $ git checkout add_haiku_plat
     $ luarocks make luasocket-scm-0.rockspec 
 
 
