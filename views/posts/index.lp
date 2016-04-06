@@ -1,4 +1,4 @@
-<div class="row">
+<div id="search" class="row">
     <div class="col-md-4">
         <script>
           (function() {
