@@ -22,7 +22,7 @@
         for k, v in pairs(posts) do
 ?> 
     	    <li>
-                <a href="/posts/<%= k %>"><%=v['title'] %></a><%= v['date'] == 'unknown' and '' or ' - '..os.date("%Y-%m-%d", v['date']) %>
+                <a href="/posts/<%= k %>"><%=v %></a>
             </li>
     
 <?lua
