@@ -19,7 +19,7 @@
         <h1>Some badly written notes on stuff I'm doing</h1>
         <ul>
 <?lua
-        for k, v in posts do
+        for k, v in pairs(posts) do
 ?> 
     	    <li>
                 <a href="/posts/<%= k %>"><%=v['title'] %></a><%= v['date'] == 'unknown' and '' or ' - '..os.date("%Y-%m-%d", v['date']) %>
