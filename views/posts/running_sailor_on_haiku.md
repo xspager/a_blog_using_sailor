@@ -1,5 +1,11 @@
 # Running Sailor on the Haiku Operating System
 
+*Edited in 15 april 2015:*
+
+- Changed LuaSocket install instructions to use the main repo instead of my fork.
+- Fix the nonsense header
+
+
 If you never heard of [Haiku](https://en.wikipedia.org/wiki/Haiku_%28operating_system%29) according with Wikipedia: *Haiku is a free and open-source operating system compatible with the now discontinued BeOS.* Since it implements the [POSIX](https://en.wikipedia.org/wiki/POSIX) API we can run many Unix compatible software like the Lua interpreter, LuaRocks and some Lua libraries. 
 
 First thing we need to do is to get the last nightly version of Haiku in <http://download.haiku-os.org/> ([direct download link](http://download.haiku-os.org/nightly-images/x86_gcc2_hybrid)).
@@ -37,13 +43,12 @@ Use LuaRocks's command *path* to set Lua's *path* and *cpath*, and add LuaRocks 
     export PATH=$PATH:~/.lua/bin/
 
 
-## Installing LuaRocks fork
+## Installing LuaSocket
 
-Clone [LuaSocket](https://github.com/xspager/luasocket) fork with links LuaSocket with the Haiku's lib network.
+Clone [LuaSocket](https://github.com/diegonehab/luasocket) and install with luarocks:
 
     $ git clone https://github.com/xspager/luasocket
     $ cd luasocket
-    $ git checkout add_haiku_plat
     $ luarocks make luasocket-scm-0.rockspec 
 
 
@@ -55,5 +60,4 @@ Clone [LuaSocket](https://github.com/xspager/luasocket) fork with links LuaSocke
     $ lua start-server.lua
 
 ![Sailor app running on the WebPositive browser](/pub/images/sailor_test_app_on_browser.png)
-
 
